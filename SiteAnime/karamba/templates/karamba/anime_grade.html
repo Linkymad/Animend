@@ -1,0 +1,12 @@
+{% extends 'karamba/base.html'%}
+{% load static %}
+
+
+{% block content %}
+<h2>Введите оценки аниме</h2>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Сохранить</button>
+    </form>
+{% endblock %}

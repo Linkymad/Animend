@@ -1,0 +1,65 @@
+body {
+  background-image: url("/static/karamba/images/bd1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+
+.img-anime-shots {
+  max-width: 150%;
+  height: auto;
+}
+
+.navbar {
+  height: 30px;
+  margin-top: 30px;
+}
+.container-cards {
+
+  margin-top: 3cm;
+  margin-left: 7cm;
+  margin-right: 7cm;
+  display: flex;
+  justify-content: space-between;
+
+ }
+
+
+.header-title {
+  color: rgb(87, 24, 233);
+  font-size: 50px;
+  font-weight: 500;
+  text-align: center;
+  justify-content: center;
+  margin-top: 170px;
+}
+
+.cards-holder {
+
+  display: flex;
+  justify-content: space-between;
+  gap: 1cm;
+
+}
+
+
+
+.card-link {
+  object-fit: cover;
+  margin-top: auto;
+  color: rgb(239, 239, 241);
+  font-size: 26px;
+  font-weight: 400;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 250px; /* или любой другой размер, заданный для карточки */
+  text-align: center; /* или любое другое выравнивание для текста внутри карточки */
+}
+.card-title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+}

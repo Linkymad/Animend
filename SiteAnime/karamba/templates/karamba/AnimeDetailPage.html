@@ -1,0 +1,76 @@
+{% extends 'karamba/base.html'%}
+{% load static %}
+
+
+{% block content %}
+
+<div class="rob">
+  <div class="container">
+    <div class="row">
+      <div class="karton">
+        <div class="col-md-8">
+          <div class="d-flex">
+            <div class="card mb-3">
+              <img src="{{ anime.photo.url }}" class="card-img-top" alt="{{ a.title }}">
+            </div>
+            <div class="card-body">
+              <ul class="list-group list-group-flush">
+                {% if anime.check_True == 1 %}
+                  <li class="list-group-item">Статус: {{ anime.check_Ongoing.all|join:', ' }}  </li>
+                {% endif %}
+                <li class="list-group-item">Название: {{ anime.title }}  </li>
+                <li class="list-group-item">Оригинальное название:  {{ anime.original_anime }} </li>
+                {% if anime.ganre.all %}
+                  <li class="list-group-item">Жанр: {{ anime.ganre.all|join:', ' }}</li>
+                {% endif %}
+                {% if anime.grade %}
+                  <li class="list-group-item">Оценка: {{ anime.grade }}  </li>
+                {% endif %}
+                {% if anime.grade_time %}
+                  <li class="list-group-item">Спустя время: {{ anime.grade_time }} </li>
+                {% endif %}
+                <li class="list-group-item">Год выхода: {{ anime.year }}</li>
+                {% if anime.Number_seasons %}
+                  <li class="list-group-item">Количество сезонов: {{ anime.Number_seasons }}</li>
+                {% endif %}
+                {% if anime.Number_films %}
+                  <li class="list-group-item">Количество фильмов: {{ anime.Number_films }}</li>
+                {% endif %}
+                {% if anime.Number_episodes %}
+                  <li class="list-group-item">Количество серий: {{ anime.Number_episodes }}</li>
+                {% endif %}
+                {%if anime.views != 0%}
+                <li class="list-group-item">Количество просмотров: {{ anime.views }}</li>
+                {% endif %}
+                {% if anime.Plot_Grade != 0 or anime.Animation_Grade != 0 or anime.Characters_Grade != 0 or anime.World_Grade != 0 or anime.IMHO_Grade != 0 %}
+                  <li class="list-group-item">
+                    Сюжет  : {{ anime.Plot_Grade }}
+                    Анимация  : {{ anime.Animation_Grade }}
+                    Персонажи  : {{ anime.Characters_Grade }}
+                    Мир  : {{ anime.World_Grade }}
+                    ИМХО  : {{ anime.IMHO_Grade }}
+                  </li>
+                {% endif %}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="call">
+  {% if anime.descriptions %}
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">{{ anime.descriptions }} </li>
+    </ul>
+  {% endif %}
+  </div>
+  <div class="anime-shots-container">
+    {% for image in anime.animeshots_set.all %}
+      <img src="{{ image.image.url }}" alt="{{ image.descriptions }}" class="anime-shot">
+    {% endfor %}
+  </div>
+</div>
+
+
+{% endblock %}

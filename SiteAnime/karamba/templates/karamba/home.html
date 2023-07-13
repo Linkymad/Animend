@@ -1,0 +1,18 @@
+{% extends 'karamba/base.html'%}
+{% load static %}
+
+
+{% block content %}
+<div class="container-cards">
+    <div class="row">
+        <div class="cards-holder">
+            {% for anime in anime_list %}
+             <a href="{{ anime.get_absolute_url }}" class="card-link">
+                <img src="{{ anime.photo.url }}" class="card-img-top" alt="{{ anime.title }}">
+                <div class="card-title" data-title="{{ anime.title }}"> {{ anime.title|slice:":20" }} {% if anime.title|length > 20 %}...{% endif %}</div>
+             </a>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

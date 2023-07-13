@@ -1,0 +1,39 @@
+.call {
+  width: 100%;
+  margin-left: 70px;
+  margin-top: 20px;
+}
+.anime-shots-container {
+  margin-left: 70px;
+  margin-top: 20px;
+  margin-bottom: 70px;
+  justify-content: space-between;
+
+}
+
+.anime-shot {
+  max-width: 400px;
+  height: auto;
+  margin-right: 10px;
+
+}
+
+.rob {
+  margin-top: 70px;
+  margin-right: 160px;
+}
+
+.card {
+
+  object-fit: cover;
+  width: 30%;
+  height: 100%;
+}
+
+.card-body {
+
+
+  margin-left: 10px;
+  margin-top: 10px;
+}
+

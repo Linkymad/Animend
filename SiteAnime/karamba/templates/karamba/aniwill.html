@@ -1,0 +1,45 @@
+{% extends 'karamba/base.html'%}
+{% load static %}
+
+{% block content %}
+<div class="rob">
+  <div class="container">
+    <div class="row">
+      {% for a in anime %}
+        <div class="karton">
+          <div class="col-md-8">
+            <div class="d-flex">
+              <div class="card mb-3">
+                <a href="{{ a.get_absolute_url }}">
+                  <img src="{{ a.photo.url }}" class="card-img-top" alt="{{ a.title }}">
+                </a>
+              </div>
+              <div class="card-body">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">Статус: {{ a.check_Ongoing.all|join:', ' }}  </li>
+                  <li class="list-group-item">Название: {{ a.title }}  </li>
+                  <li class="list-group-item">Оригинальное название:  {{ a.original_anime }} </li>
+                  <li class="list-group-item">Жанр: {{ a.ganre.all|join:', ' }}</li>
+                  <li class="list-group-item">Год выхода: {{ a.year }}</li>
+                  <li class="list-group-item">
+                  {% if a.Number_episodes %}
+                    Серий: {{ a.Number_episodes }}
+                  {% endif %}
+                  {% if a.Number_seasons %}
+                    Сезонов: {{ a.Number_seasons }}
+                  {% endif %}
+                  {% if a.Number_films %}
+                    Фильмов: {{ a.Number_films }}
+                  {% endif %}
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% endblock %}
